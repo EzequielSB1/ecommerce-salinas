@@ -1,11 +1,16 @@
 // imports
 import React from 'react'
+import ItemListContainer from './ItemListContainer'
 
 // component
 const Main = () => {
+  
+  const filtros = true
+
   return (
     <main>
-      <h6>main</h6>
+      <ItemListContainer filtros={filtros}/>
+      <ItemListContainer/>
     </main>
   )
 }

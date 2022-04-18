@@ -9,24 +9,38 @@
 }
 
 header, footer {
-    background-color: #ffe600;
+    background-color: #050a38;
 }
 
 
 a {
     text-decoration: 0;
-    color: #000;
+    color: #fff;
 }
 
 .header {
     width: 100vw;
     height: 10vh;
     padding: 1%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr 3fr .8fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "title nav cart";
+    h1 {
+        grid-area: title;
+        margin-bottom: 3px;
+        color: #fff;
+    }
     nav {
+        grid-area: nav;
+        display: flex;
+        justify-content: center;
+        span {
+            color: #fff;
+            margin-right: 10%;
+        }
         a {
             font-size: 1rem;
             margin-right: 10px;
@@ -35,11 +49,43 @@ a {
             }
         }
     }
+    .Menu {
+        grid-area: cart;
+        display: flex;
+        justify-content: flex-end;
+        span {
+            color: #fff;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 main {
     height: 80vh;
     background-color: #f5f5f5;
+    .filter {
+        height: 20%;
+        padding: 1%;
+        p {
+            font-size: 3rem;
+            text-align: center;
+            color: #9b971f;
+        }
+    }
+    .products {
+        height: 70%;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+            font-size: 3rem;
+            text-align: start;
+            color: #1f9b1f;
+        }
+    }
 }
 
 footer {
@@ -50,6 +96,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     p {
+        color: #fff;
         margin-left: 5px;
         font-size: 1.2rem;
     }

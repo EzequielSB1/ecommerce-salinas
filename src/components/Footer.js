@@ -1,15 +1,13 @@
 // imports
 import React from 'react'
-import Nav from './Nav'
+import NavBar from './NavBar'
 
 // component
 const Footer = () => {
   return (
     <footer>
-        <p>
-            @Derechos reservados no se para quien pero se reservan igual
-        </p>
-        <Nav/>
+        <p>Copyright &copy; - 2022 Derechos reservados no se para quien pero se reservan igual</p>
+        <NavBar/>
     </footer>
   )
 }
