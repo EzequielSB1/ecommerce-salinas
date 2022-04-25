@@ -1,35 +1,29 @@
 // imports
 import React from 'react'
+import ItemCount from './ItemCount'
 
 // component
-const ItemListContainer = (props) => {
-  if (props.filtros) {
+const ItemListContainer = ({filters,counter}) => {
+
+  const onAdd = () => {
+
+  }
+
+  if (filters) {
     return (
-      <div className='filter'>
+      <section className='filter'>
         <p>
           Este es el main de los filtros.
         </p>
-      </div>
+      </section>
     )
   } else {
     return (
-      <div className='products'>
-        <p>
-          Este es el main de los productos
-        </p>
-        <p>
-          Este es el main de los productos
-        </p>
-        <p>
-          Este es el main de los productos
-        </p>
-        <p>
-          Este es el main de los productos
-        </p>
-        <p>
-          Este es el main de los productos
-        </p>
-      </div>
+      <section className='products'>
+      <ItemCount stock={10} init={0} onAdd={onAdd}/>
+      <ItemCount stock={50} init={0} onAdd={onAdd}/>
+      <ItemCount stock={100} init={0} onAdd={onAdd}/>
+      </section>
     )
   }
 }

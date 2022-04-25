@@ -4,12 +4,10 @@ import ItemListContainer from './ItemListContainer'
 
 // component
 const Main = () => {
-  
-  const filtros = true
 
   return (
     <main>
-      <ItemListContainer filtros={filtros}/>
+      <ItemListContainer filters={true}/>
       <ItemListContainer/>
     </main>
   )
