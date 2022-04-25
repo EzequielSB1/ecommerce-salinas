@@ -76,11 +76,11 @@ main {
         }
     }
     .products {
+        width: 90%;
         height: 70%;
-        padding: 1%;
+        padding: 5%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         .cart {
             display: flex;
             flex-direction: column;

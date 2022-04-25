@@ -7,7 +7,6 @@ const Main = () => {
 
   return (
     <main>
-      <ItemListContainer filters={true}/>
       <ItemListContainer/>
     </main>
   )
