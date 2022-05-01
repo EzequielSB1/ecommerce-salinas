@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({init, stock, onAdd}) => {
+const ItemCount = ({init, stock, onAdd,}) => {
 
     const [counter, setCounter] = useState(init)
     const [confirm, setConfirm] = useState(false)
@@ -27,6 +27,7 @@ const ItemCount = ({init, stock, onAdd}) => {
         <div className='cart'>
             <h6 className='cart__title'>Cart product</h6>
             <div>
+                <p className='cart__stock'>Stock: {stock}</p>
                 <div>
                     <button onClick={remove} className='cart__button material-icons'>remove</button>
                     <p className='cart__counter'>{counter}</p>

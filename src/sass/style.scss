@@ -73,6 +73,9 @@ a {
 main {
     height: 80vh;
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     grid-area: main;
     overflow: scroll;
     .filter {
@@ -87,7 +90,7 @@ main {
     .products {
         width: 100%;
         height: 70%;
-        padding: 5px;
+        padding: 1% 0;
         div {
             display: flex;
             justify-content: space-around;
@@ -95,7 +98,7 @@ main {
                 width: 250px;
                 height: 350px;
                 padding: 20px;
-                background-color: aquamarine;
+                background-color: #f1e9e9;
                 display: flex;
                 flex-direction: column;
                 h6 {
@@ -114,12 +117,75 @@ main {
                 button {
                     width: 80%;
                     height: 50px;
-                    background: #9b971f;
+                    background: #f5f5f5;
                     border: none;
                     margin: 10px auto;
                     &:hover {
                         cursor: pointer;
-                        background-color: #f5f5f5;
+                        background-color: #bbb1b1;
+                    }
+                }
+            }
+        }
+    }
+    .details {
+        width: 100%;
+        height: 100%;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        div {
+            .cardDetails {
+                padding: 1.5%;
+                margin: 50px 0;
+                background-color: #bbb1b1;
+                display: grid;
+                grid-template-columns: 1fr 5fr 2fr;
+                grid-template-rows: 1fr 3fr;
+                grid-template-areas: 
+                "title details count"
+                "img details count";
+                h6 {
+                    grid-area: title;
+                    font-size: larger;
+                    text-align: center;
+                }
+                img {
+                    grid-area: img;
+                    width: 250px;
+                    height: 150px;
+                }
+                p {
+                    grid-area: details;
+                    margin: 0 30px;
+                }
+                .cart {
+                    grid-area: count;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    .cart__title {
+                        font-size: large;
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .cart__stock {
+                            font-size: medium;
+                            margin: 20px 0;
+                        }
+                        div {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                        button {
+                            width: 100%;
+                            height: 35px;
+                            margin-top: 10px;
+                        }
                     }
                 }
             }

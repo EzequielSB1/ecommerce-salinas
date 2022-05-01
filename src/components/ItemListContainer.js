@@ -1,33 +1,7 @@
 // imports
 import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
-
-const productosIniciales = [
-  {
-    id : 1,
-    nombre : "Ventana",
-    precio : 1500,
-    imagen : "https://http2.mlstatic.com/D_NQ_NP_670358-MLA42826612796_072020-V.webp"
-  },
-  {
-    id : 2,
-    nombre : "Puerta",
-    precio : 2500,
-    imagen : "https://http2.mlstatic.com/D_NQ_NP_961661-MLA43990468486_112020-V.webp"
-  },
-  {
-    id : 3,
-    nombre : "Puerta ventana",
-    precio : 3500,
-    imagen : "https://http2.mlstatic.com/D_NQ_NP_972699-MLA31935917273_082019-V.webp"
-  },
-  {
-    id : 4,
-    nombre : "Bacha",
-    precio : 500,
-    imagen : "https://http2.mlstatic.com/D_NQ_NP_6https://http2.mlstatic.com/D_NQ_NP_719146-MLA46496058379_062021-V.webp70358-MLA42826612796_072020-V.webp"
-  }
-]
+import productosIniciales from './productos.json'
 
 // component
 const ItemListContainer = () => {
@@ -49,6 +23,10 @@ const ItemListContainer = () => {
       setProductos(productosIniciales)
     })
 
+    pedido.catch(()=>{
+      console.log("Carga fallida, recargue la pagina")
+    })
+
   },[])
 
   
@@ -63,6 +41,13 @@ const ItemListContainer = () => {
       </section>
     )
   }
+
+  // return( 
+  //   <p>Cargando...</p> ? (
+  //   <section className='products'>  
+  //     <ItemList productos={productos}/> 
+  //   </section>)
+  // )
   
 }
 

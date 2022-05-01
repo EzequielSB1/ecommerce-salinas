@@ -2,6 +2,9 @@ import React from 'react'
 import Item from './Item'
 
 const ItemList = ({productos}) => {
+
+  const details = false
+
   return (
     <div>
       {productos.map(producto=>{
