@@ -4,7 +4,7 @@ import productosIniciales from './productos.json'
 
 const ItemDetailContainer = () => {
     let [cargando,setCargando] = useState(true)
-    let [productos,setProductos] = useState([]) 
+    let [productos,setProductos] = useState({}) 
   
     useEffect(()=>{
   
@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
       } else {
         return(
             <section className='details'>
-            <ItemDetail productos={productos}/>
+            <ItemDetail key={productosIniciales[0].id} imagen={productosIniciales[0].imagen} nombre={productosIniciales[0].nombre} descripcion={productosIniciales[0].descripcion} counter={productosIniciales[0].counter} stock={productosIniciales[0].stock} />
           </section>
         )
       }

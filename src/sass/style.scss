@@ -134,58 +134,56 @@ main {
         padding: 3%;
         display: flex;
         flex-direction: column;
-        div {
-            .cardDetails {
-                padding: 1.5%;
-                margin: 50px 0;
-                background-color: #bbb1b1;
-                display: grid;
-                grid-template-columns: 1fr 5fr 2fr;
-                grid-template-rows: 1fr 3fr;
-                grid-template-areas: 
-                "title details count"
-                "img details count";
-                h6 {
-                    grid-area: title;
-                    font-size: larger;
-                    text-align: center;
+        .cardDetails {
+            padding: 1.5%;
+            margin: 50px 0;
+            background-color: #bbb1b1;
+            display: grid;
+            grid-template-columns: 1fr 5fr 2fr;
+            grid-template-rows: 1fr 3fr;
+            grid-template-areas: 
+            "title details count"
+            "img details count";
+            h6 {
+                grid-area: title;
+                font-size: larger;
+                text-align: center;
+            }
+            img {
+                grid-area: img;
+                width: 250px;
+                height: 150px;
+            }
+            p {
+                grid-area: details;
+                margin: 0 30px;
+            }
+            .cart {
+                grid-area: count;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                .cart__title {
+                    font-size: large;
                 }
-                img {
-                    grid-area: img;
-                    width: 250px;
-                    height: 150px;
-                }
-                p {
-                    grid-area: details;
-                    margin: 0 30px;
-                }
-                .cart {
-                    grid-area: count;
+                div {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
                     align-items: center;
-                    .cart__title {
-                        font-size: large;
+                    .cart__stock {
+                        font-size: medium;
+                        margin: 20px 0;
                     }
                     div {
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
                         align-items: center;
-                        .cart__stock {
-                            font-size: medium;
-                            margin: 20px 0;
-                        }
-                        div {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                        }
-                        button {
-                            width: 100%;
-                            height: 35px;
-                            margin-top: 10px;
-                        }
+                    }
+                    button {
+                        width: 100%;
+                        height: 35px;
+                        margin-top: 10px;
                     }
                 }
             }

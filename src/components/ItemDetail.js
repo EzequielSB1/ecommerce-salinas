@@ -1,17 +1,14 @@
 import React from 'react'
-import Item from './Item'
+import ItemCount from './ItemCount'
 
-const ItemDetail = ({productos}) => {
-
-    const details = true
+const ItemDetail = (props) => {
 
   return (
-    <div>
-        {productos.map(producto=>{
-            return(
-                <Item key={producto.id} producto={producto} details={details}/>
-            )
-        })}
+    <div className='cardDetails'>
+      <h6>{props.nombre}</h6>
+      <img src={props.imagen} alt={props.nombre}/>                
+      <p>{props.descripcion}</p>
+      <ItemCount stock={props.stock} init={props.counter} />
     </div>
   )
 }
