@@ -1,38 +1,42 @@
 [
     {
-      "id" : 1,
+      "id" : 0,
       "nombre" : "Ventana",
       "precio" : 1500,
       "imagen" : "https://http2.mlstatic.com/D_NQ_NP_670358-MLA42826612796_072020-V.webp",
       "descripcion" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut fugiat nulla voluptatum molestias praesentium quia, quaerat iusto optio consequatur esse corrupti nisi quasi eveniet voluptate nobis expedita harum at quibusdam error, saepe ex, iste reiciendis pariatur. Neque nisi quaerat excepturi, facere doloremque quisquam quibusdam sequi quia, quos, ab vel dolorem delectus vitae ex eum cum maxime repellendus? Molestias necessitatibus in rem, nulla maxime ex recusandae numquam quod excepturi sit, quisquam porro ratione, similique illum ipsam eum. Vel debitis eaque ipsa hic iure tempora. Harum voluptatem temporibus quos adipisci, minima nesciunt perspiciatis beatae inventore illum, natus facilis assumenda sunt iste atque id sapiente! Eveniet esse ex provident molestias! Quidem dolore, et ad deserunt architecto maxime molestiae at minus laboriosam quasi odit blanditiis reiciendis perspiciatis similique molestias nulla, id quisquam. Adipisci molestiae distinctio eligendi, animi sit ad consectetur porro repellat magni minus velit dignissimos omnis nostrum repudiandae sequi, ipsa iusto sunt!", 
       "stock" : 5,
-      "counter" : 0
+      "counter" : 0,
+      "categoria" : "vestimenta"
     },
     {
-      "id" : 2,
+      "id" : 1,
       "nombre" : "Puerta",
       "precio" : 2500,
       "imagen" : "https://http2.mlstatic.com/D_NQ_NP_961661-MLA43990468486_112020-V.webp",
       "descripcion" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut fugiat nulla voluptatum molestias praesentium quia, quaerat iusto optio consequatur esse corrupti nisi quasi eveniet voluptate nobis expedita harum at quibusdam error, saepe ex, iste reiciendis pariatur. Neque nisi quaerat excepturi, facere doloremque quisquam quibusdam sequi quia, quos, ab vel dolorem delectus vitae ex eum cum maxime repellendus? Molestias necessitatibus in rem, nulla maxime ex recusandae numquam quod excepturi sit, quisquam porro ratione, similique illum ipsam eum. Vel debitis eaque ipsa hic iure tempora. Harum voluptatem temporibus quos adipisci, minima nesciunt perspiciatis beatae inventore illum, natus facilis assumenda sunt iste atque id sapiente! Eveniet esse ex provident molestias! Quidem dolore, et ad deserunt architecto maxime molestiae at minus laboriosam quasi odit blanditiis reiciendis perspiciatis similique molestias nulla, id quisquam. Adipisci molestiae distinctio eligendi, animi sit ad consectetur porro repellat magni minus velit dignissimos omnis nostrum repudiandae sequi, ipsa iusto sunt!", 
       "stock" : 5000,
-      "counter" : 0
+      "counter" : 0,
+      "categoria" : "electronica"
     },
     {
-      "id" : 3,
+      "id" : 2,
       "nombre" : "Puerta ventana",
       "precio" : 3500,
       "imagen" : "https://http2.mlstatic.com/D_NQ_NP_972699-MLA31935917273_082019-V.webp",
       "descripcion" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut fugiat nulla voluptatum molestias praesentium quia, quaerat iusto optio consequatur esse corrupti nisi quasi eveniet voluptate nobis expedita harum at quibusdam error, saepe ex, iste reiciendis pariatur. Neque nisi quaerat excepturi, facere doloremque quisquam quibusdam sequi quia, quos, ab vel dolorem delectus vitae ex eum cum maxime repellendus? Molestias necessitatibus in rem, nulla maxime ex recusandae numquam quod excepturi sit, quisquam porro ratione, similique illum ipsam eum. Vel debitis eaque ipsa hic iure tempora. Harum voluptatem temporibus quos adipisci, minima nesciunt perspiciatis beatae inventore illum, natus facilis assumenda sunt iste atque id sapiente! Eveniet esse ex provident molestias! Quidem dolore, et ad deserunt architecto maxime molestiae at minus laboriosam quasi odit blanditiis reiciendis perspiciatis similique molestias nulla, id quisquam. Adipisci molestiae distinctio eligendi, animi sit ad consectetur porro repellat magni minus velit dignissimos omnis nostrum repudiandae sequi, ipsa iusto sunt!", 
       "stock" : 5000,
-      "counter" : 0
+      "counter" : 0,
+      "categoria" : "electronica"
     },
     {
-      "id" : 4,
+      "id" : 3,
       "nombre" : "Bacha",
       "precio" : 500,
       "imagen" : "https://http2.mlstatic.com/D_NQ_NP_6https://http2.mlstatic.com/D_NQ_NP_719146-MLA46496058379_062021-V.webp70358-MLA42826612796_072020-V.webp",
       "descripcion" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut fugiat nulla voluptatum molestias praesentium quia, quaerat iusto optio consequatur esse corrupti nisi quasi eveniet voluptate nobis expedita harum at quibusdam error, saepe ex, iste reiciendis pariatur. Neque nisi quaerat excepturi, facere doloremque quisquam quibusdam sequi quia, quos, ab vel dolorem delectus vitae ex eum cum maxime repellendus? Molestias necessitatibus in rem, nulla maxime ex recusandae numquam quod excepturi sit, quisquam porro ratione, similique illum ipsam eum. Vel debitis eaque ipsa hic iure tempora. Harum voluptatem temporibus quos adipisci, minima nesciunt perspiciatis beatae inventore illum, natus facilis assumenda sunt iste atque id sapiente! Eveniet esse ex provident molestias! Quidem dolore, et ad deserunt architecto maxime molestiae at minus laboriosam quasi odit blanditiis reiciendis perspiciatis similique molestias nulla, id quisquam. Adipisci molestiae distinctio eligendi, animi sit ad consectetur porro repellat magni minus velit dignissimos omnis nostrum repudiandae sequi, ipsa iusto sunt!", 
       "stock" : 5000,
-      "counter" : 0
+      "counter" : 0,
+      "categoria" : "electronica"
     }
   ]

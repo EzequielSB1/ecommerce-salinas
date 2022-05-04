@@ -31,7 +31,7 @@ a {
     grid-area: header;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 3fr .8fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "title nav cart";
@@ -44,12 +44,7 @@ a {
         grid-area: nav;
         display: flex;
         justify-content: center;
-        align-content: center;
-        span {
-            color: #fff;
-            margin-right: 10%;
-        }
-        a {
+        .nav__link {
             font-size: 1.2rem;
             margin-right: 10px;
             &:hover {

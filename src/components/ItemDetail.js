@@ -14,3 +14,5 @@ const ItemDetail = (props) => {
 }
 
 export default ItemDetail
+
+

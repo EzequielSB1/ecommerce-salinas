@@ -1,5 +1,7 @@
 // imports
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import CartWidget from './CartWidget'
 import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
@@ -8,8 +10,15 @@ const Main = () => {
 
   return (
     <main>
-      <ItemListContainer/>
-      <ItemDetailContainer/>
+
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        {/* <Route path='/contacto' element={} /> */}
+        <Route path='/:nombreCategoria' element={<ItemListContainer/>}/>
+        <Route path='/producto/:id' element={<ItemDetailContainer/>} />
+        <Route path='/carrito' element={<CartWidget/>} />
+      </Routes>
+
     </main>
   )
 }

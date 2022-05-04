@@ -1,30 +1,34 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import productosIniciales from './productos.json'
 
 const ItemDetailContainer = () => {
     let [cargando,setCargando] = useState(true)
-    let [productos,setProductos] = useState({}) 
+    let [producto,setProducto] = useState({}) 
+    let {id} = useParams()
   
     useEffect(()=>{
   
-      const pedido = new Promise((res)=>{
+      const productosFiltrados = productosIniciales.filter(x => x.id === id)
+
+      const pedidoFiltrado = new Promise((res)=>{
         setTimeout(()=>{
-          res(productosIniciales)
+          res(productosFiltrados)
         }, 2000)
       })
-  
-      pedido.then(()=>{
+      
+      pedidoFiltrado.then(()=>{
         console.log("Termino de cargar bien")
         setCargando(false)
-        setProductos(productosIniciales)
+        setProducto(productosFiltrados)
       })
 
-      pedido.catch(()=>{
-          console.log("Carga fallida, recargue la pagina")
+      pedidoFiltrado.catch(()=>{
+        console.log("Carga fallida, recargue la pagina")
       })
   
-    },[])
+    },[id])
 
 
     if (cargando) {
@@ -33,8 +37,8 @@ const ItemDetailContainer = () => {
         )
       } else {
         return(
-            <section className='details'>
-            <ItemDetail key={productosIniciales[0].id} imagen={productosIniciales[0].imagen} nombre={productosIniciales[0].nombre} descripcion={productosIniciales[0].descripcion} counter={productosIniciales[0].counter} stock={productosIniciales[0].stock} />
+          <section className='details'>
+            <ItemDetail producto={producto} key={productosIniciales.id} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock} />
           </section>
         )
       }

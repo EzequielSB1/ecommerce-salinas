@@ -1,5 +1,6 @@
 // imports
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 import NavBar from './NavBar'
 
@@ -11,7 +12,9 @@ const Header = () => {
 
   return (
     <header className='header'>
+      <Link to="/">
         <h1 className='header__title'>Mercado Oscuro</h1>
+      </Link>
         <NavBar navbar={navbar}/>
         <CartWidget/>
     </header>
