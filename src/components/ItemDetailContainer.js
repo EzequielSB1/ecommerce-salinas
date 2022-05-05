@@ -9,8 +9,12 @@ const ItemDetailContainer = () => {
     let {id} = useParams()
   
     useEffect(()=>{
+
+      console.log({id})
   
       const productosFiltrados = productosIniciales.filter(x => x.id === id)
+
+      console.log(productosFiltrados)
 
       const pedidoFiltrado = new Promise((res)=>{
         setTimeout(()=>{
