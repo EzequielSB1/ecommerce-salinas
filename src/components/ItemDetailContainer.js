@@ -12,23 +12,25 @@ const ItemDetailContainer = () => {
 
       console.log({id})
   
-      const productosFiltrados = productosIniciales.filter(x => x.id === id)
+      const resultado = productosIniciales.filter((producto)=>{
+        return producto.id == id
+      })[0]
 
-      console.log(productosFiltrados)
+      console.log(resultado)
 
-      const pedidoFiltrado = new Promise((res)=>{
+      const pedido = new Promise((res)=>{
         setTimeout(()=>{
-          res(productosFiltrados)
+          res(resultado)
         }, 2000)
       })
       
-      pedidoFiltrado.then(()=>{
+      pedido.then(()=>{
         console.log("Termino de cargar bien")
         setCargando(false)
-        setProducto(productosFiltrados)
+        setProducto(resultado)
       })
 
-      pedidoFiltrado.catch(()=>{
+      pedido.catch(()=>{
         console.log("Carga fallida, recargue la pagina")
       })
   
@@ -42,10 +44,14 @@ const ItemDetailContainer = () => {
       } else {
         return(
           <section className='details'>
-            <ItemDetail producto={producto} key={productosIniciales.id} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock} />
+            <ItemDetail  producto={producto} 
+            key={productosIniciales.id} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock}
+            />
           </section>
         )
       }
 }
 
 export default ItemDetailContainer
+
+
