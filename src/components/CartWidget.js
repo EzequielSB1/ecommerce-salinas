@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const CartWidget = () => {
     return (
         <div className='Menu'>
-            <Link to="/carrito">
+            <Link to="/cart">
                 <span className='material-icons'>
                     shopping_cart
                 </span>
