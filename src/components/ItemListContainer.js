@@ -18,7 +18,7 @@ const ItemListContainer = () => {
       const pedido = new Promise((res)=>{
         setTimeout(()=>{
           res(productosIniciales)
-        }, 2000)
+        }, 1500)
       })
 
       pedido.then(()=>{
@@ -58,7 +58,9 @@ const ItemListContainer = () => {
   
   if (cargando) {
     return(
-      <p>Cargando...</p>
+      <div className='container__carga'>
+        <div className='carga'></div>
+      </div>
     )
   } else {
     return(

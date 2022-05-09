@@ -8,7 +8,7 @@ const Nav = (props) => {
   if (props.navbar) {
     return (
       <nav className='nav'>
-          <Link to="/electronica" className='nav__link'>Electronica</Link>
+          <Link to="/electronica" className='nav__link'>Tecnologia</Link>
           <Link to="/vestimenta" className='nav__link'>Vestimenta</Link>
           <Link to="/vehiculos" className='nav__link'>Vehiculos</Link>
       </nav>
