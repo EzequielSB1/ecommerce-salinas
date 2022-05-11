@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const ItemCount = ({init, stock, onAdd, precio, nombre}) => {
+const ItemCount = ({init, stock, onAdd, precio, nombre, onCount}) => {
 
     const [counter, setCounter] = useState(init)
     const [confirm, setConfirm] = useState(false)
@@ -18,31 +18,48 @@ const ItemCount = ({init, stock, onAdd, precio, nombre}) => {
         }
     }
 
-    const navigate = useNavigate()
-    
-    const buttonConfirm = () => {
-        console.log(`se compraron ${counter} ${nombre}`)
-        onAdd(counter)
-        setConfirm(true)
-        navigate(`/cart`)
-    }
+    const confirmar = () => {
+        onAdd(counter);
+        console.log(counter);
+        setConfirm(true);
+    };
 
-    return (
+
+    if (!confirmar) {
+        return (
+        <div>
+            <div className="cart">
+            <button onClick={add} className="material-icons">
+                add
+            </button>
+            <p className="cantidad">Unidades a comprar : {counter}</p>
+            <button onClick={remove} className="material-icons">
+                remove
+            </button>
+            </div>
+            <button onClick={confirmar} className="botonSuma">
+            Confirmar
+            </button>
+        </div>
+        );
+    } else {
+        return (
         <div className='cart'>
             <div>
-                <div className='cart__text'>
-                    <p className='cart__precio'>Precio: {precio}</p>
-                    <p className='cart__stock'>Stock: {stock}</p>
-                </div>
-                <div>
-                    <button onClick={remove} className='cart__button-remove material-icons'>remove</button>
-                    <p className='cart__counter'>{counter}</p>
-                    <button onClick={add} className='cart__button-add material-icons'>add</button>
-                </div> 
-                <button onClick={buttonConfirm} className='cart__buttonAddCar material-icons'>add_shopping_cart</button>           
+            <button onClick={add} className="material-icons">
+                add
+            </button>
+            <p className="cart__counter">{counter}</p>
+            <button onClick={remove} className="material-icons">
+                remove
+            </button>
             </div>
+            <button onClick={confirmar} className="botonSuma">
+                Confirmar
+            </button>
         </div>
-    )
+        );
+    }
 }
 
 export default ItemCount

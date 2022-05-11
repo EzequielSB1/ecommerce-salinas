@@ -1,7 +1,7 @@
 // imports
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import CartWidget from './CartWidget'
+import Cart from './Cart'
 import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
@@ -16,7 +16,7 @@ const Main = () => {
         {/* <Route path='/contacto' element={} /> */}
         <Route path='/:nombreCategoria' element={<ItemListContainer/>}/>
         <Route path='/producto/:id' element={<ItemDetailContainer/>} />
-        <Route path='/cart' element={<CartWidget/>} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
 
     </main>
