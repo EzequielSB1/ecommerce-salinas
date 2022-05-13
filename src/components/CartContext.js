@@ -1,21 +1,31 @@
 import React from "react"
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const cartContext = createContext()
 
 const { Provider } = cartContext
 
-const CustomProvider = ({ defaultValue = [], children }) => {
+const CustomProvider = ({ children }) => {
 
-    const [cart, setCart] = useState(defaultValue)
+    const [cart, setCart] = useState( () => {
+        try {
+            const productosEnLocalStorage = localStorage.getltem('item');
+            return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage):[];
+        }catch (error){
+            return [];
+        }
+    })
+
+    useEffect (() => (
+        localStorage.setItem('item', JSON.stringify(cart))), [cart])
 
 
-    const addItem = (producto, quantity) => {
+    const addItem = (producto, counter) => {
         if (inTheCart(producto.id)) {
             const newCart = [...cart]
             for (const element of newCart) {
                 if (element.item.id === producto.id) {
-                    producto.quantity = it.quantity + quantity
+                    producto.counter = it.counter + counter
                 }
             }
             setCart(newCart)
@@ -24,7 +34,7 @@ const CustomProvider = ({ defaultValue = [], children }) => {
                 ...cart,
                 {
                     item: producto,
-                    quantity: quantity,
+                    quantity: counter,
                 },
             ])
         }
