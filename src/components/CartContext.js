@@ -42,10 +42,13 @@ const CustomProvider = ({ children }) => {
 
     const inTheCart = (id) => {
         return cart.find((e) => e.id === id)
+        if(inTheCart) {
+            
+        }
     };
 
     const removeItem = (id) => {
-        const newCart = [...cart].map((element) => element.id !== id)
+        const newCart = [...cart].map((item, quantity) => item.item.id !== id)
         setCart(newCart)
     }
     

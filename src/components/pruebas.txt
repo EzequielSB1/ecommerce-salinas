@@ -1,0 +1,22 @@
+if (incart){
+ setCartItens(
+  cartItens.map ((productincart) ->(
+   if (productinCart.id --- product.id)(
+     return (...inCart, amount: inCart.mount-1);
+    )else return productinCart;
+ );
+ }else(
+ setCartitens (I...cartitems, {..- product, amount:1}});
+const deleteltenToCart-(product) ->{
+ const incart-cartItems. find(
+  (productincart) -> productincart.1-product.id
+ if (incart.amounit --- 1){
+  setCartItens(
+            w..
+   cartItems. filter(CoroductinCart) -> productInCart.id l-- product.id)
+  }else{
+  settartitens((productincart)>{
+   ir (productincart.id product.id)i
+     return ...inCart, amount: intart.mount-1);
+     }else return productincort;
+  );

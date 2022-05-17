@@ -12,10 +12,10 @@ const Cart = () => {
       <ul>
         {cart.map((item, quantity) => {
           return(
-            <li key={null} >
-              <img src={item.imagen}/>
-              <h6>{item.nombre}</h6>
-              <p>{quantity}</p>
+            <li key={item.item.id} >
+              <img src={item.item.imagen}/>
+              <h6>{item.item.nombre}</h6>
+              <p>{item.quantity}</p>
               <button onClick={removeItem}>X</button>
             </li>
           )
