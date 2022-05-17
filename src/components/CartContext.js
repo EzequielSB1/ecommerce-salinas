@@ -55,6 +55,10 @@ const CustomProvider = ({ children }) => {
     const clearCart = () => {
         setCart([])
     }
+
+    // const precioTotal = () => {
+        
+    // }
     
     return (
         <Provider value={{ cart, addItem, clearCart, removeItem }}>
