@@ -179,43 +179,55 @@ main {
                 letter-spacing: 1.2px;
                 margin: 0 auto;
             }
-            .cart {
+            .container__cart {
                 grid-area: count;
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    .cart__text {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-around;
-                        .cart__stock, .cart__precio {
-                            font-size: 1.1rem;
-                            margin: 20px 0;
-                            text-align: center;
-                        }
-                    }
+                .cart {
                     div {
-                        width: 100%;
-                        display: flex; 
-                        flex-direction: row;
-                        align-content: center;
-                        justify-content: space-around;
-                        button {
-                            margin-top: 0;
-                            width: 10%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .cart__text {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            .cart__stock, .cart__precio {
+                                font-size: 1.1rem;
+                                margin: 20px 0;
+                                text-align: center;
+                            }
                         }
-                        .cart__counter {
-                            font-size: 1.5rem;
+                        div {
+                            width: 100%;
+                            display: flex; 
+                            flex-direction: row;
+                            align-content: center;
+                            justify-content: space-around;
+                            button {
+                                margin-top: 0;
+                                width: 10%;
+                            }
+                            .cart__counter {
+                                font-size: 1.5rem;
+                            }
                         }
-                    }
-                    button {
-                        width: 100%;
-                        height: 35px;
-                        margin-top: 22px;
                     }
                 }
             }
+            
+            button {
+                width: 100%;
+                height: 35px;
+                margin-top: 22px;
+            }
+        }
+    }
+    .cartView {
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        .cartTitle {
+            text-align: center;
+            margin: 5px auto;
         }
     }
 }

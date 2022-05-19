@@ -24,42 +24,22 @@ const ItemCount = ({init, stock, onAdd, precio, nombre, onCount}) => {
         setConfirm(true);
     };
 
-
-    if (!confirmar) {
-        return (
-        <div>
+    return (
+        <div className='container_cart'>
             <div className="cart">
-            <button onClick={add} className="material-icons">
-                add
+            <button onClick={remove} className="material-icons">
+                remove
             </button>
             <p className="cantidad">Unidades a comprar : {counter}</p>
-            <button onClick={remove} className="material-icons">
-                remove
-            </button>
-            </div>
-            <button onClick={confirmar} className="botonSuma">
-            Confirmar
-            </button>
-        </div>
-        );
-    } else {
-        return (
-        <div className='cart'>
-            <div>
             <button onClick={add} className="material-icons">
                 add
             </button>
-            <p className="cart__counter">{counter}</p>
-            <button onClick={remove} className="material-icons">
-                remove
-            </button>
             </div>
-            <button onClick={confirmar} className="botonSuma">
-                Confirmar
-            </button>
+            <div>
+                {confirmar ? <button onClick={confirmar} className="botonSuma">Confirmar</button> : null}
+            </div>
         </div>
-        );
-    }
+    )
 }
 
 export default ItemCount

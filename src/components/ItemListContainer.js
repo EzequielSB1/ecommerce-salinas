@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import productosIniciales from './productos.json'
+import { db } from './firebase'
+import { collection, addDoc, getDoc, doc, getDocs } from 'firebase/firestore'
 
 // component
 const ItemListContainer = () => {
@@ -13,70 +15,92 @@ const ItemListContainer = () => {
 
   useEffect(()=>{
 
-    if (nombreCategoria === undefined) {
+    const productosCollection = collection( db, "productos" )
+    const consulta = getDocs(productosCollection)
 
-      const pedido = new Promise((res)=>{
-        setTimeout(()=>{
-          res(productosIniciales)
-        }, 1500)
+    consulta.then((resultado)=>{
+        resultado.docs.map(doc => {
+          const productosConId = doc.data()
+          productosConId.id = doc.id
+
+          console.log(productosConId)
+        })
       })
 
-      pedido.then(()=>{
-        console.log("Termino de cargar bien")
-        setCargando(false)
-        setProductos(productosIniciales)
+      setProductos(productos)
+      setCargando(false)
+
+      consulta.catch((error)=>{
+
+      })
+      consulta.finally(()=>{
+
       })
 
-      pedido.catch(()=>{
-        console.log("Carga fallida, recargue la pagina")
-      })
+  //   if (nombreCategoria === undefined) {
 
-    } else {
+  //     const pedido = new Promise((res)=>{
+  //       setTimeout(()=>{
+  //         res(productosConId)
+  //       }, 1500)
+  //     })
 
-      const productosFiltrados = productosIniciales.filter(x => x.categoria === nombreCategoria)
+  //     pedido.then(()=>{
+  //       console.log("Termino de cargar bien")
+  //       setCargando(false)
+  //       setProductos(productosConId)
+  //     })
 
-      const pedidoFiltrado = new Promise((res)=>{
-        setTimeout(()=>{
-          res(productosFiltrados)
-        }, 2000)
-      })
+  //     pedido.catch(()=>{
+  //       console.log("Carga fallida, recargue la pagina")
+  //     })
+
+  //   } else {
+
+  //     const productosFiltrados = productosIniciales.filter(x => x.categoria === nombreCategoria)
+
+  //     const pedidoFiltrado = new Promise((res)=>{
+  //       setTimeout(()=>{
+  //         res(productosFiltrados)
+  //       }, 2000)
+  //     })
       
-      pedidoFiltrado.then(()=>{
-        console.log("Termino de cargar bien")
-        setCargando(false)
-        setProductos(productosFiltrados)
-      })
+  //     pedidoFiltrado.then(()=>{
+  //       console.log("Termino de cargar bien")
+  //       setCargando(false)
+  //       setProductos(productosFiltrados)
+  //     })
 
-      pedidoFiltrado.catch(()=>{
-        console.log("Carga fallida, recargue la pagina")
-      })
+  //     pedidoFiltrado.catch(()=>{
+  //       console.log("Carga fallida, recargue la pagina")
+  //     })
 
-    }
+  //   }
 
-    },[nombreCategoria])
+  //   },[nombreCategoria])
 
   
-  if (cargando) {
-    return(
-      <div className='container__carga'>
-        <div className='carga'></div>
-      </div>
-    )
-  } else {
-    return(
-      <section className='products'>
-        <ItemList productos={productos}/>
-      </section>
-    )
-  }
+  // if (cargando) {
+  //   return(
+  //     <div className='container__carga'>
+  //       <div className='carga'></div>
+  //     </div>
+  //   )
+  // } else {
+  //   return(
+  //     <section className='products'>
+  //       <ItemList productos={productos}/>
+  //     </section>
+  //   )
+  // })
 
-  // return( 
-  //   <p>Cargando...</p> ? (
-  //   <section className='products'>  
-  //     <ItemList productos={productos}/> 
-  //   </section>)
-  // )
+  return (
+    <section className='products'>  
+      <ItemList productos={productos}/> 
+    </section>)
   
+  
+})
 }
 
 // exports

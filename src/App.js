@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 import { BrowserRouter } from "react-router-dom"
 import CustomProvider from "./components/CartContext"
 
+
 const App = () => {
     return (
         <BrowserRouter>

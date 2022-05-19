@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import productosIniciales from './productos.json'
+import { db } from './firebase'
 
 const ItemDetailContainer = () => {
     let [cargando,setCargando] = useState(true)
@@ -37,21 +38,27 @@ const ItemDetailContainer = () => {
     },[id])
 
 
-    if (cargando) {
-        return(
-          <div className='container__carga'>
-            <div className='carga'></div>
-          </div>
-        )
-      } else {
-        return(
-          <section className='details'>
-            <ItemDetail  producto={producto} 
-            key={productosIniciales.id} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock}
-            />
-          </section>
-        )
-      }
+    // if (cargando) {
+    //   return(
+    //     <div className='container__carga'>
+    //       <div className='carga'></div>
+    //     </div>
+    //   )
+    // } else {
+    //   return(
+    //     <section className='details'>
+    //       <ItemDetail  producto={producto} 
+    //       key={productosIniciales.id} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock}
+    //       />
+    //     </section>
+    //   )
+    // }
+
+    return (
+      <>
+        {cargando ? <div className='container__carga'><div className='carga'></div></div> : <section className='details'><ItemDetail key={productosIniciales.id} producto={producto} imagen={productosIniciales.imagen} nombre={productosIniciales.nombre} descripcion={productosIniciales.descripcion} counter={productosIniciales.counter} stock={productosIniciales.stock}/></section>}
+      </>
+    )
 }
 
 export default ItemDetailContainer

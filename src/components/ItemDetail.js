@@ -14,12 +14,13 @@ const ItemDetail = ({producto}) => {
 
   const onAdd = (counter) => {
     setCartItems(counter)
-    addItem(producto, counter)
+    addItem(producto, setCartItems)
   }
 
   const funcionVerContador = () => {
     setVerContador(true)
   }
+
 
   return (
 

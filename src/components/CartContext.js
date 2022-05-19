@@ -15,53 +15,51 @@ const CustomProvider = ({ children }) => {
             return [];
         }
     })
+    const [cantidadTotal, setCantidadTotal] = useState(0)
+    const [precioTotal, setPrecioTotal] = useState(0)
+    const [cantidadProducto, setCantidadProducto] = useState(0)
 
     useEffect (() => (
-        localStorage.setItem('item', JSON.stringify(cart))), [cart])
+        localStorage.setItem('item', JSON.stringify(cart))),
+    [cart])
 
-
-    const addItem = (producto, counter) => {
-        if (inTheCart(producto.id)) {
-            const newCart = [...cart]
-            for (const element of newCart) {
-                if (element.item.id === producto.id) {
-                    producto.counter = it.counter + counter
-                }
-            }
-            setCart(newCart)
-        } else {
-            setCart([
-                ...cart,
-                {
-                    item: producto,
-                    quantity: counter,
-                },
-            ])
-        }
-    }
 
     const inTheCart = (id) => {
-        return cart.find((e) => e.id === id)
-        if(inTheCart) {
-            
-        }
+        return cart.find((productoCarrito) => productoCarrito.id == id)
+        console.log(cart.find((productoCarrito) => productoCarrito.id == id))
     };
 
-    const removeItem = (id) => {
-        const newCart = [...cart].map((item, quantity) => item.item.id !== id)
-        setCart(newCart)
+    const addItem = (producto, setCartItems) => {
+        if (inTheCart(producto.id)) {
+            
+        } else {
+            setCantidadProducto(setCartItems)
+            setCantidadTotal(cantidadTotal + cantidadProducto)
+            setPrecioTotal(setCartItems * producto.precio)
+            setCart([...cart, producto])
+            // setCart([
+            //     ...cart,
+            //     {
+            //         item: producto,
+            //         quantity: counter,
+            //     },
+            // ])
+        }
     }
-    
+
+    const removeItem = (id) => {
+        const newCart = [...cart].filter((producto) => producto.id !== id);
+        setCart(newCart);
+    }
+
     const clearCart = () => {
         setCart([])
     }
 
-    // const precioTotal = () => {
-        
-    // }
+
     
     return (
-        <Provider value={{ cart, addItem, clearCart, removeItem }}>
+        <Provider value={{ cart, addItem, clearCart, removeItem, cantidadTotal, cantidadProducto }}>
             {children}
         </Provider>
     )
