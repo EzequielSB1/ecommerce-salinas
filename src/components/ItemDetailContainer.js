@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-
+      setCargando(true)
   
       const productosCollection = collection( db, "productos" )
       const resultadoDelDoc = doc(productosCollection, id)

@@ -1,12 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import { cartContext } from './CartContext'
 import { Link } from 'react-router-dom'
 import { db } from './firebase'
+import { addDoc, collection } from 'firebase/firestore'
 
 const Cart = () => {
 
+  const [idCompra, setIdCompra] = useState("")
+
   const { cart, clearCart, removeItem, carritoVacio, cantidadTotal, cantidadProducto } = useContext(cartContext)
+
+  const finalizarCompra = () => {
+
+    const ordenesCollection = collection( db, "ordenes")
+
+    const orden = {
+      buyer : {
+        name : "pedro",
+        phone : "25368745",
+        email : "trucho@test.com"
+      },
+      items : cart,
+      date : "", 
+      total : 10000
+    }
+
+    const consulta = addDoc(ordenesCollection, orden)
+
+    consulta.then((resultado) => {
+      setIdCompra(resultado.id)
+    })
+    consulta.catch((error) => {
+      console.log(error)
+    })
+
+  }
 
   return (
     <div className='cartView'>
@@ -36,6 +65,8 @@ const Cart = () => {
       </ul>
       <p>Precio total: ${cantidadTotal}</p>
       <button onClick={clearCart}>Limpiar carrito</button>
+      <button onClick={finalizarCompra}>Finaliar Compra</button>
+      {idCompra && <h3>compra guardada, su codigo de compra es: {idCompra}</h3>}
     </div>
   )
 }
