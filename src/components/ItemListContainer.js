@@ -141,7 +141,6 @@ const ItemListContainer = () => {
   //   )
   // })
 
-  console.log(productos)
   setCargando(false)
 
 })

@@ -31,7 +31,10 @@ const CustomProvider = ({ children }) => {
 
     const addItem = (producto, setCartItems) => {
         if (inTheCart(producto.id)) {
-            
+            setCantidadProducto(setCartItems + cantidadProducto)
+            setCantidadTotal(cantidadTotal + cantidadProducto)
+            setPrecioTotal(precioTotal + precioTotal)
+            setCart([...cart, cantidadProducto])
         } else {
             setCantidadProducto(setCartItems)
             setCantidadTotal(cantidadTotal + cantidadProducto)
